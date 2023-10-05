@@ -26,16 +26,16 @@ export const getAlllikeVideoController= async (req, res)=>{
   }
 
   
-// export const deleteLikeVideoController = async (req, res) => {
-//   const { videoId: videoId, Viewer: Viewer } = req.params;
-//   // console.log(videoId,Viewer)
-//   try {
-//     await likedVideo.findOneAndDelete({
-//       videoId: videoId,
-//       Viewer: Viewer,
-//     });
-//     res.status(200).json({ message: "Removed  from your watch Laters" });
-//   } catch (error) {
-//     res.status(400).json({ message: error.message });
-//   }
-// };
+export const deleteLikeVideoController = async (req, res) => {
+  const { videoId: videoId, Viewer: Viewer } = req.params;
+  // console.log(videoId,Viewer)
+  try {
+    await likedVideo.findOneAndDelete({
+      videoId: videoId,
+      Viewer: Viewer,
+    });
+    res.status(200).json({ message: "Removed  from your watch Laters" });
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+};
